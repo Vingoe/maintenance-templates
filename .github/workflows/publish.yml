@@ -1,1 +1,40 @@
+name: Validate and publish
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate against schema
+        run: npx --yes ajv-cli@5 validate -s schema/templates.schema.json -d templates.json
+
+      - name: Check template IDs are unique
+        run: jq -e '[.templates[].id] | length == (unique | length)' templates.json
+
+      - name: Stage site
+        run: mkdir _site && cp templates.json _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
