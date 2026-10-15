@@ -1,1 +1,61 @@
-
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-10-15",
+  "templates": [
+    {
+      "id": "template-hvac-filter",
+      "title": "HVAC Filter Replacement",
+      "description": "Replace HVAC air filters to maintain air quality and system efficiency",
+      "category": "HVAC",
+      "recommendedRecurrenceType": "quarterly",
+      "recommendedInterval": 1,
+      "recommendedPriority": "Medium",
+      "recommendedWorkType": "Maintenance",
+      "estimatedDurationMinutes": 30,
+      "estimatedCostRange": "$20-$60",
+      "skillLevel": "DIY",
+      "instructions": "1. Turn off HVAC system\n2. Locate filter compartment\n3. Remove old filter\n4. Install new filter with airflow arrow pointing correct direction\n5. Turn system back on",
+      "checklistItems": [
+        "Turn off system",
+        "Remove old filter",
+        "Check filter size",
+        "Install new filter",
+        "Test system"
+      ],
+      "applicableAssetTypes": ["HVAC", "Air Conditioner", "Furnace"],
+      "applicablePropertyTypes": ["Residential", "Commercial"],
+      "isRegulatory": false,
+      "isSafetyRelated": true,
+      "regulatoryNotes": null,
+      "source": "Industry Standard",
+      "templateVersion": "1.0"
+    },
+    {
+      "id": "template-roof-inspection",
+      "title": "Roof Inspection",
+      "description": "Visual inspection of roof condition, flashing, and drainage",
+      "category": "Structural",
+      "recommendedRecurrenceType": "annual",
+      "recommendedInterval": 1,
+      "recommendedPriority": "Medium",
+      "recommendedWorkType": "Inspection",
+      "estimatedDurationMinutes": 60,
+      "estimatedCostRange": "$0-$150",
+      "skillLevel": "Professional",
+      "instructions": "Inspect shingles/tiles for damage, check flashing around chimneys and vents, clear debris, check for signs of leaks in the attic.",
+      "checklistItems": [
+        "Check shingles/tiles",
+        "Inspect flashing",
+        "Check gutters and downspouts",
+        "Inspect attic for leaks"
+      ],
+      "applicableAssetTypes": ["Roof"],
+      "applicablePropertyTypes": ["Residential", "Commercial"],
+      "isRegulatory": false,
+      "isSafetyRelated": false,
+      "regulatoryNotes": null,
+      "source": "Industry Standard",
+      "templateVersion": "1.0"
+    }
+  ]
+}
