@@ -1,22 +1,33 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "required": ["schemaVersion", "lastUpdated", "templates"],
+  "required": ["schemaVersion", "locale", "lastUpdated", "templates"],
   "additionalProperties": false,
   "properties": {
-    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "schemaVersion": { "type": "integer", "const": 2 },
+    "locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
     "lastUpdated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
     "templates": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/template" } }
   },
   "definitions": {
     "stringArray": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max", "currency"],
+      "properties": {
+        "min": { "type": "number", "minimum": 0 },
+        "max": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" }
+      }
+    },
     "template": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "id", "title", "description", "category", "recommendedRecurrenceType",
         "recommendedInterval", "recommendedPriority", "recommendedWorkType",
-        "estimatedDurationMinutes", "estimatedCostRange", "skillLevel", "instructions",
+        "estimatedDurationMinutes", "estimatedCost", "skillLevel", "instructions",
         "checklistItems", "applicableAssetTypes", "applicablePropertyTypes",
         "isRegulatory", "isSafetyRelated", "regulatoryNotes", "source", "templateVersion"
       ],
@@ -25,13 +36,13 @@
         "title": { "type": "string", "minLength": 1 },
         "description": { "type": "string" },
         "category": { "type": "string" },
-        "recommendedRecurrenceType": { "type": "string", "enum": ["daily", "weekly", "monthly", "quarterly", "annual"] },
+        "recommendedRecurrenceType": { "type": "string", "enum": ["daily", "weekly", "monthly", "quarterly", "biannual", "annual"] },
         "recommendedInterval": { "type": "integer", "minimum": 1 },
         "recommendedPriority": { "type": "string", "enum": ["Low", "Medium", "High", "Critical"] },
         "recommendedWorkType": { "type": "string", "enum": ["Maintenance", "Inspection", "Repair", "Service"] },
         "estimatedDurationMinutes": { "type": "integer", "minimum": 0 },
-        "estimatedCostRange": { "type": ["string", "null"] },
-        "skillLevel": { "type": "string", "enum": ["DIY", "Professional"] },
+        "estimatedCost": { "oneOf": [{ "$ref": "#/definitions/cost" }, { "type": "null" }] },
+        "skillLevel": { "type": "string", "enum": ["DIY", "Professional", "Specialist"] },
         "instructions": { "type": "string" },
         "checklistItems": { "$ref": "#/definitions/stringArray" },
         "applicableAssetTypes": { "$ref": "#/definitions/stringArray" },
