@@ -5,7 +5,7 @@
   "templates": [
     {
       "id": "template-hvac-filter",
-      "title": "HVAC Filter Replacement",
+      "title": "Aircon Filter Replacement",
       "description": "Replace HVAC air filters to maintain air quality and system efficiency",
       "category": "HVAC",
       "recommendedRecurrenceType": "quarterly",
