@@ -1,1 +1,47 @@
-
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schemaVersion", "lastUpdated", "templates"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "lastUpdated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "templates": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/template" } }
+  },
+  "definitions": {
+    "stringArray": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "title", "description", "category", "recommendedRecurrenceType",
+        "recommendedInterval", "recommendedPriority", "recommendedWorkType",
+        "estimatedDurationMinutes", "estimatedCostRange", "skillLevel", "instructions",
+        "checklistItems", "applicableAssetTypes", "applicablePropertyTypes",
+        "isRegulatory", "isSafetyRelated", "regulatoryNotes", "source", "templateVersion"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^template-[a-z0-9-]+$" },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "recommendedRecurrenceType": { "type": "string", "enum": ["daily", "weekly", "monthly", "quarterly", "annual"] },
+        "recommendedInterval": { "type": "integer", "minimum": 1 },
+        "recommendedPriority": { "type": "string", "enum": ["Low", "Medium", "High", "Critical"] },
+        "recommendedWorkType": { "type": "string", "enum": ["Maintenance", "Inspection", "Repair", "Service"] },
+        "estimatedDurationMinutes": { "type": "integer", "minimum": 0 },
+        "estimatedCostRange": { "type": ["string", "null"] },
+        "skillLevel": { "type": "string", "enum": ["DIY", "Professional"] },
+        "instructions": { "type": "string" },
+        "checklistItems": { "$ref": "#/definitions/stringArray" },
+        "applicableAssetTypes": { "$ref": "#/definitions/stringArray" },
+        "applicablePropertyTypes": { "$ref": "#/definitions/stringArray" },
+        "isRegulatory": { "type": "boolean" },
+        "isSafetyRelated": { "type": "boolean" },
+        "regulatoryNotes": { "type": ["string", "null"] },
+        "source": { "type": "string" },
+        "templateVersion": { "type": "string" }
+      }
+    }
+  }
+}
