@@ -15,7 +15,7 @@
       "estimatedDurationMinutes": 30,
       "estimatedCost": { "min": 20, "max": 60, "currency": "GBP" },
       "skillLevel": "DIY",
-      "instructions": "1. Turn off HVAC system\n2. Locate filter compartment\n3. Remove old filter\n4. Install new filter with airflow arrow pointing correct direction\n5. Turn system back on",
+      "instructions": "1. Turn off Aircon system\n2. Locate filter compartment\n3. Remove old filter\n4. Install new filter with airflow arrow pointing correct direction\n5. Turn system back on",
       "checklistItems": ["Turn off system", "Remove old filter", "Check filter size", "Install new filter", "Test system"],
       "applicableAssetTypes": ["HVAC", "Air Conditioner", "Furnace"],
       "applicablePropertyTypes": ["Residential", "Commercial"],
@@ -51,7 +51,7 @@
       "id": "template-boiler-service",
       "title": "Annual Boiler Service",
       "description": "Comprehensive annual boiler inspection and servicing",
-      "category": "HVAC",
+      "category": "Heating",
       "recommendedRecurrenceType": "annual",
       "recommendedInterval": 1,
       "recommendedPriority": "High",
@@ -61,13 +61,13 @@
       "skillLevel": "Specialist",
       "instructions": "Professional service required. Technician will inspect all components, clean burners, check safety controls, and test efficiency.",
       "checklistItems": ["Check gas pressure", "Inspect burners", "Test safety controls", "Clean heat exchanger", "Verify ventilation", "Test carbon monoxide levels"],
-      "applicableAssetTypes": ["Boiler", "HVAC"],
+      "applicableAssetTypes": ["Boiler", "Heating"],
       "applicablePropertyTypes": ["Residential", "Commercial"],
       "isRegulatory": true,
       "isSafetyRelated": true,
       "regulatoryNotes": "Annual servicing required by gas safety regulations",
       "source": "Manufacturer Recommendation",
-      "templateVersion": "1.0"
+      "templateVersion": "1.1"
     },
     {
       "id": "template-gutter-cleaning",
