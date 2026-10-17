@@ -6,8 +6,8 @@
     {
       "id": "template-hvac-filter",
       "title": "Aircon Filter Replacement",
-      "description": "Replace HVAC air filters to maintain air quality and system efficiency",
-      "category": "HVAC",
+      "description": "Replace Aircon air filters to maintain air quality and system efficiency",
+      "category": "Air Conditioner",
       "recommendedRecurrenceType": "quarterly",
       "recommendedInterval": 1,
       "recommendedPriority": "Medium",
@@ -23,7 +23,7 @@
       "isSafetyRelated": true,
       "regulatoryNotes": null,
       "source": "Industry Standard",
-      "templateVersion": "1.0"
+      "templateVersion": "1.1"
     },
     {
       "id": "template-smoke-detector",
