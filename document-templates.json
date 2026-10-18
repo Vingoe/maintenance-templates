@@ -1,1 +1,122 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-10-17",
+  "templates": [
+    {
+      "id": "gas-safety-certificate",
+      "title": "Gas Safety Certificate (CP12)",
+      "description": "Annual gas safety check by a Gas Safe registered engineer. Give a copy to tenants within 28 days.",
+      "category": "Compliance",
+      "renewalIntervalMonths": 12,
+      "isRequired": true,
+      "applicablePropertyTypes": ["Residential", "Mixed Use"]
+    },
+    {
+      "id": "eicr",
+      "title": "Electrical Installation Condition Report (EICR)",
+      "description": "Electrical safety inspection by a qualified electrician, at least every five years.",
+      "category": "Compliance",
+      "renewalIntervalMonths": 60,
+      "isRequired": true
+    },
+    {
+      "id": "epc",
+      "title": "Energy Performance Certificate (EPC)",
+      "description": "Required before marketing a property to let. Valid for ten years.",
+      "category": "Compliance",
+      "renewalIntervalMonths": 120,
+      "isRequired": true
+    },
+    {
+      "id": "smoke-co-alarm-record",
+      "title": "Smoke & CO Alarm Test Record",
+      "description": "Record that alarms were tested and working on the first day of each tenancy.",
+      "category": "Compliance",
+      "isRequired": true,
+      "applicablePropertyTypes": ["Residential", "Mixed Use"]
+    },
+    {
+      "id": "legionella-risk-assessment",
+      "title": "Legionella Risk Assessment",
+      "description": "Assessment of water system risk. Review every two years or when the system changes.",
+      "category": "Compliance",
+      "renewalIntervalMonths": 24,
+      "isRequired": false
+    },
+    {
+      "id": "pat-test",
+      "title": "PAT Test Certificate",
+      "description": "Portable appliance testing for furnished lets. Recommended annually.",
+      "category": "Compliance",
+      "renewalIntervalMonths": 12,
+      "isRequired": false
+    },
+    {
+      "id": "fire-risk-assessment",
+      "title": "Fire Risk Assessment",
+      "description": "Required for HMOs, common areas and commercial premises. Review annually.",
+      "category": "Compliance",
+      "renewalIntervalMonths": 12,
+      "isRequired": false,
+      "applicablePropertyTypes": ["Commercial", "Mixed Use", "Industrial"]
+    },
+    {
+      "id": "tenancy-agreement",
+      "title": "Tenancy Agreement",
+      "description": "Signed agreement for the current tenancy.",
+      "category": "Tenancy",
+      "isRequired": true,
+      "applicablePropertyTypes": ["Residential", "Mixed Use"]
+    },
+    {
+      "id": "deposit-protection-certificate",
+      "title": "Deposit Protection Certificate",
+      "description": "Proof the deposit is protected in a government-approved scheme, with prescribed information.",
+      "category": "Tenancy",
+      "isRequired": true,
+      "applicablePropertyTypes": ["Residential", "Mixed Use"]
+    },
+    {
+      "id": "how-to-rent-guide",
+      "title": "How to Rent Guide (signed receipt)",
+      "description": "Evidence the current How to Rent guide was given to tenants (England).",
+      "category": "Tenancy",
+      "isRequired": true,
+      "applicablePropertyTypes": ["Residential"]
+    },
+    {
+      "id": "right-to-rent-check",
+      "title": "Right to Rent Check",
+      "description": "Copies of identity documents checked before the tenancy started (England).",
+      "category": "Tenancy",
+      "isRequired": true,
+      "applicablePropertyTypes": ["Residential"]
+    },
+    {
+      "id": "inventory-check-in",
+      "title": "Inventory & Check-in Report",
+      "description": "Condition report signed by the tenant at the start of the tenancy.",
+      "category": "Tenancy",
+      "isRequired": false,
+      "applicablePropertyTypes": ["Residential", "Mixed Use"]
+    },
+    {
+      "id": "landlord-insurance",
+      "title": "Landlord Insurance Policy",
+      "description": "Buildings and landlord liability cover. Renew annually.",
+      "category": "Insurance",
+      "renewalIntervalMonths": 12,
+      "isRequired": true
+    },
+    {
+      "id": "rent-guarantee-insurance",
+      "title": "Rent Guarantee Insurance",
+      "description": "Optional cover against missed rent and legal costs.",
+      "category": "Insurance",
+      "renewalIntervalMonths": 12,
+      "isRequired": false,
+      "applicablePropertyTypes": ["Residential", "Mixed Use"]
+    }
+  ]
+}
 
