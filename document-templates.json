@@ -29,7 +29,7 @@
     },
     {
       "id": "smoke-co-alarm-record",
-      "title": "Smoke & CO Alarm Test Record",
+      "title": "Smoke & CO2 Alarm Test Record",
       "description": "Record that alarms were tested and working on the first day of each tenancy.",
       "category": "Compliance",
       "isRequired": true,
