@@ -23,14 +23,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate against schema
+      - name: Validate maintenance templates
         run: npx --yes ajv-cli@5 validate -s schema/templates.schema.json -d templates.json
 
+      - name: Validate document templates
+        run: npx --yes ajv-cli@5 validate -s schema/document-templates.schema.json -d document-templates.json
+
       - name: Check template IDs are unique
-        run: jq -e '[.templates[].id] | length == (unique | length)' templates.json
+        run: |
+          for f in templates.json document-templates.json; do
+            jq -e '[.templates[].id] | length == (unique | length)' "$f" > /dev/null \
+              || { echo "Duplicate template id in $f"; exit 1; }
+          done
 
       - name: Stage site
-        run: mkdir _site && cp templates.json _site/
+        run: mkdir _site && cp templates.json document-templates.json _site/
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
